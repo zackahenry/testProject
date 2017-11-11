@@ -440,9 +440,9 @@
       
       
 function checkLoginState() {
-  FB.getLoginStatus(function(responseTwo) {
-    statusChangeCallback(responseTwo);
-    console.log(responseTwo);
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    console.log(response);
   });
 }
 
