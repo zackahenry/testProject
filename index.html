@@ -14,9 +14,6 @@
     .book {
       width: 100%;
     }
-    .fb_iframe_widget{
-      width: 70px;
-    }
     .footer {
       position: fixed;
       bottom: 0px;
@@ -63,10 +60,7 @@
 
 
 <!--Testing FB login Button-->
-  <fb:login-button 
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
               
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -133,7 +127,7 @@
 
 
 </div>
-
+<div id="fb-root"></div>
 <div class="footer">&copy; Copywright Zack Henry</div>
 
 <!--// ~~~~~~~~~~~~~~~~~~~~  !!!!!!!SCRIPTS!!!!!! ~~~~~~~~~~~~~~~~~~~~~~~
@@ -447,16 +441,12 @@
       
       
 function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
+  FB.getLoginStatus(function(responseTwo) {
+    statusChangeCallback(responseTwo);
+    console.log(responseTwo);
   });
 }
-      
-      
-FB.getLoginStatus(function(responseTwo) {
-    statusChangeCallback(responseTwo);
-  console.log(responseTwo);
-});
+
     </script>
 
 </body>
