@@ -441,9 +441,9 @@
       
    function statusChangeCallback(response){
    if(response.status === 'connected'){
-    console.log('logged in and authenticated')
+    console.log(response)
    } else {
-     console.log(response)
+     console.log('not logged in or authenticated')
    }
   }
 
