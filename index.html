@@ -427,8 +427,9 @@
       version    : 'v2.11'
     });
       
-    FB.AppEvents.logPageView();   
-      
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);  
+    });   
   };
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
@@ -438,15 +439,15 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
       
-      
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-    console.log(2+3);
-  });
-}
+   function statusChangeCallback(response){
+   if(response.status === 'connected'){
+    console.log('logged in and authenticated')
+   } else {
+     console.log('not authenticated')
+   }
+  }
 
-$fb = new Facebook\Facebook([
+/*$fb = new Facebook\Facebook([
   'app_id' => '129284001088896',
   'app_secret' => 'caa58d241ba62e7862361de64957fb34',
   'default_graph_version' => 'v2.11',
@@ -467,7 +468,7 @@ $user = $response->getGraphUser();
 
 echo 'Name: ' . $user['name'];
 // OR
-// echo 'Name: ' . $user->getName();
+// echo 'Name: ' . $user->getName(); */
 
 
     </script>
