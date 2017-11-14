@@ -446,15 +446,15 @@ function checkLoginState() {
   });
 }
 
-/*$fb = new Facebook\Facebook([
-  'app_id' => '{app-id}',
-  'app_secret' => '{app-secret}',
+$fb = new Facebook\Facebook([
+  'app_id' => '129284001088896',
+  'app_secret' => 'caa58d241ba62e7862361de64957fb34',
   'default_graph_version' => 'v2.11',
   ]);
 
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me?fields=id,name', '{access-token}');
+  $response = $fb->get('/me?fields=id,name', 'EAAB1lUb1xYABAClWAjU6EpnhXIJulZBlvgMMJJ3uEDjoUnNbFAtCRRsS3ZBh00Kj9IbNBbvJM6ngSdbAeZAjZBuyLliopRpNaXvUMQmVIqtbW1xsNoLKKZCpEyCZCuVCWIssrNskqYEjQVxuotZC717Fi6GEevsQYsZD');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
@@ -467,7 +467,7 @@ $user = $response->getGraphUser();
 
 echo 'Name: ' . $user['name'];
 // OR
-// echo 'Name: ' . $user->getName();*/
+// echo 'Name: ' . $user->getName();
 
 
     </script>
