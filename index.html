@@ -433,7 +433,9 @@
     
     FB.login(function(response) {
   // handle the response
-}, {scope: 'public_profile,user_email,user_birthday,user_location,user_website,user_about_me,user_work_history,user_education_history,user_friends,user_likes'});
+}, {
+      scope: 'public_profile,user_email,user_birthday,user_location,user_website,user_about_me,user_work_history,user_education_history,user_friends,user_likes',
+      return_scope: true});
       
   };
   (function(d, s, id){
@@ -452,7 +454,7 @@
    }
   }  
       
-$fb = new Facebook\Facebook([
+/*$fb = new Facebook\Facebook([
   'app_id' => '129284001088896',
   'app_secret' => 'caa58d241ba62e7862361de64957fb34',
   'default_graph_version' => 'v2.11',
@@ -473,7 +475,7 @@ $user = $response->getGraphUser();
 
 echo 'Name: ' . $user['name'];
 // OR
-// echo 'Name: ' . $user->getName(); 
+// echo 'Name: ' . $user->getName(); */
 
 
     </script>
