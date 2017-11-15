@@ -429,7 +429,12 @@
       
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);  
-    });   
+    }); 
+    
+    FB.login(function(response) {
+  // handle the response
+}, {scope: 'public_profile,user_email,user_birthday,user_location,user_website,user_about_me,user_work_history,user_education_history,user_friends,user_likes'});
+      
   };
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
@@ -445,11 +450,7 @@
    } else {
      console.log('not logged in or authenticated')
    }
-  }
-FB.login(function(response) {
-  // handle the response
-}, {scope: 'public_profile,user_email,user_birthday,user_location,user_website,user_about_me,user_work_history,user_education_history,user_friends,user_likes'});
-      
+  }  
       
 /*$fb = new Facebook\Facebook([
   'app_id' => '129284001088896',
