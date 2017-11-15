@@ -432,7 +432,7 @@
 ));
       
 app.get('/auth/facebook',
-  passport.authenticate('facebook'));
+  passport.authenticate('facebook', { scope: ['user_friends', 'manage_pages', 'public_profile', 'user_email', 'user_birthday', 'user_location', 'user_website', 'user_about_me', 'user_work_history', 'user_education_history', 'user_friends', 'user_likes']}));
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
@@ -440,9 +440,7 @@ app.get('/auth/facebook/callback',
     // Successful authentication, redirect home.
     res.redirect('/');
   });
-app.get('/auth/facebook',
-  passport.authenticate('facebook', { scope: ['user_friends', 'manage_pages', 'public_profile', 'user_email', 'user_birthday', 'user_location', 'user_website', 'user_about_me', 'user_work_history', 'user_education_history', 'user_friends', 'user_likes']}));
-      
+    
       
   /*window.fbAsyncInit = function() {
     FB.init({
