@@ -419,7 +419,32 @@
 
 // ~~~~~~~~~~~~~~~~~~~~  !!!!TESTING SECTION!!!!  ~~~~~~~~~~~~~~~~~~~~~~~
 
-  window.fbAsyncInit = function() {
+      passport.use(new FacebookStrategy({
+    clientID: 129284001088896,
+    clientSecret: caa58d241ba62e7862361de64957fb34,
+    callbackURL: "https://zackahenry.github.io/testProject/"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
+      
+app.get('/auth/facebook',
+  passport.authenticate('facebook'));
+
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+app.get('/auth/facebook',
+  passport.authenticate('facebook', { scope: ['user_friends', 'manage_pages', 'public_profile', 'user_email', 'user_birthday', 'user_location', 'user_website', 'user_about_me', 'user_work_history', 'user_education_history', 'user_friends', 'user_likes']}));
+      
+      
+  /*window.fbAsyncInit = function() {
     FB.init({
       appId      : '129284001088896',
       cookie     : true,
@@ -454,7 +479,7 @@
    }
   }  
       
-/*$fb = new Facebook\Facebook([
+$fb = new Facebook\Facebook([
   'app_id' => '129284001088896',
   'app_secret' => 'caa58d241ba62e7862361de64957fb34',
   'default_graph_version' => 'v2.11',
