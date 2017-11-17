@@ -418,7 +418,7 @@
       renderButtons();
 
 // ~~~~~~~~~~~~~~~~~~~~  !!!!TESTING SECTION!!!!  ~~~~~~~~~~~~~~~~~~~~~~~
-var passport = require.passport;
+/*var passport = require.passport;
  passport.use(new FacebookStrategy({
     clientID: 129284001088896,
     clientSecret: caa58d241ba62e7862361de64957fb34,
@@ -442,7 +442,9 @@ app.get('/auth/facebook/callback',
   });
     
       
-  /*window.fbAsyncInit = function() {
+  */
+      
+   window.fbAsyncInit = function() {
     FB.init({
       appId      : '129284001088896',
       cookie     : true,
@@ -476,7 +478,7 @@ app.get('/auth/facebook/callback',
      console.log('not logged in or authenticated')
    }
   }  
-      
+/*      
 $fb = new Facebook\Facebook([
   'app_id' => '129284001088896',
   'app_secret' => 'caa58d241ba62e7862361de64957fb34',
